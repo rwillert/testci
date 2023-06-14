@@ -32,6 +32,7 @@ jobs:
       - run: gradle -p api dependencies
       - run: ls -la
       - run: ls -la api/
+      - run: ls -la api/.gradle/
       - save_cache:
           paths:
             - ~/api/api/.gradle
