@@ -20,22 +20,15 @@ jobs:
     steps:
       - checkout
       # create gradle cache
-      - run: ls -la
-      - run: ls -la api/
       - restore_cache:
-          paths:
-            - ~/api/api/.gradle
           keys:
             - v1-dependencies-{{ checksum "api/build.gradle" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
       - run: gradle -p api dependencies
-      - run: ls -la
-      - run: ls -la api/
-      - run: ls -la api/.gradle/
       - save_cache:
           paths:
-            - ~/api/api/.gradle
+            - ~/.gradle
           key: v1-dependencies-{{ checksum "api/build.gradle" }}
 
       # run tests!
