@@ -22,14 +22,14 @@ jobs:
       # create gradle cache
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "build.gradle" }}
+            - v1-dependencies-{{ checksum "api/build.gradle" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
       - run: gradle -p api dependencies
       - save_cache:
           paths:
-            - ~/.gradle
-          key: v1-dependencies-{{ checksum "build.gradle" }}
+            - ~/api/.gradle
+          key: v1-dependencies-{{ checksum "api/build.gradle" }}
 
       # run tests!
       - run: gradle -p api test
