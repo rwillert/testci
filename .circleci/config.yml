@@ -6,10 +6,10 @@ jobs:
       # specify the version you desire here
       - image: cimg/openjdk:17.0.7
 
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/circleci-images/
-      # - image: circleci/postgres:9.4
+      - image: cimg/postgres:12.15
+          POSTGRES_USER: postgres
+          POSTGRES_DB: postgres
+          POSTGRES_PASSWOR: mysecretpassword
 
     working_directory: ~/api
 
@@ -33,3 +33,5 @@ jobs:
 
       # run tests!
       - run: gradle -p api test
+      - run: curl localhost:5432
+
