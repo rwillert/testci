@@ -7,10 +7,6 @@ jobs:
       - image: cimg/openjdk:17.0.7
 
       - image: cimg/postgres:12.15
-        environment:
-          POSTGRES_USER: postgres
-          POSTGRES_DB: postgres
-          POSTGRES_PASSWOR: mysecretpassword
 
     working_directory: ~/api
 
