@@ -34,3 +34,5 @@ jobs:
       # run tests!
       - run: gradle -p api test
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+      - store_test_results:
+        path: api/api/build/reports/tests/
