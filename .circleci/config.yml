@@ -5,12 +5,11 @@ jobs:
     docker:
       # specify the version you desire here
       - image: cimg/openjdk:17.0.7
-      - image: cimg/postgres:14.4
+      - image: cimg/postgres:12.3
         environment:
           POSTGRES_USER: postgres
           POSTGRES_DB: postgres
           POSTGRES_PASSWORD: mysecretpassword
-          PGDATA: /var/lib/postgresql/data
 
     working_directory: ~/api
 
