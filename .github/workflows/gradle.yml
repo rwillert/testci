@@ -38,7 +38,7 @@ jobs:
 
     - name: Build with Gradle
       working-directory: ./api
-      run: gradle build --scan --warning-mode all
+      run: gradle build --warning-mode all
 
   dependency-submission:
 
