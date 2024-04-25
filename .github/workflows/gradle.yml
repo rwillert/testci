@@ -36,7 +36,7 @@ jobs:
         build-root-directory: api
         gradle-version: '8.7'
 
-    - name: Build with Gradle Wrapper
+    - name: Build with Gradle
       working-directory: ./api
       run: gradle build
 
@@ -60,3 +60,4 @@ jobs:
       uses: gradle/actions/dependency-submission@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
       with:
         build-root-directory: api
+        gradle-version: 8.7
