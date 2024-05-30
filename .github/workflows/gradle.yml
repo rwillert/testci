@@ -48,7 +48,7 @@ jobs:
       if: always()
       with:
         files: |
-          .*/build/test-results/**/.*xml
+          api/build/test-results/**/*.xml
 
   dependency-submission:
 
