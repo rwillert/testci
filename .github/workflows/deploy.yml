@@ -1,0 +1,19 @@
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        required: true
+        default: 'main'
+        type: branch
+      environment:
+        description: 'Environment to run tests against'
+        type: environment
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Tags: $BRANCH"
+          echo "Environment: $ENVIRONMENT"
