@@ -37,7 +37,7 @@ jobs:
       uses: gradle/actions/setup-gradle@v4.4.4
       with:
         build-root-directory: api
-        gradle-version: '9.1'
+        gradle-version: 9.0
 
     - name: Test with Gradle
       working-directory: ./api
@@ -70,4 +70,4 @@ jobs:
       uses: gradle/actions/dependency-submission@v4.4.4
       with:
         build-root-directory: api
-        gradle-version: 9.1
+        gradle-version: 9.0
